@@ -1,0 +1,66 @@
+$container-size: 25rem;
+
+$grid-column-size: 7rem;
+$grid-gap: 15px;
+
+$grid-item-size: 5rem;
+
+.hidden {
+  display: none !important;
+}
+
+#app {
+  display: grid;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: $grid-column-size $grid-column-size $grid-column-size;
+  grid-template-rows: auto;
+
+  gap: $grid-gap;
+
+  box-sizing: border-box;
+  width: $container-size;
+  height: $container-size;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: rgba(70, 255, 178, 0.4);
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+
+.grid-item {
+  box-sizing: border-box;
+  width: $grid-item-size;
+  height: $grid-item-size;
+  background: rgba(255, 213, 70, 0.4);
+  border: 2px dashed rgba(236, 198, 48, 0.5);
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  &.hoverable:hover,
+  .hoverable:active {
+    box-shadow: 0px 5px 15px rgba(219, 51, 51, 0.637);
+    background: rgba(72, 178, 240, 0.103);
+  }
+
+  &.active {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+  }
+}
